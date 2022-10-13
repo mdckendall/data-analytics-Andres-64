@@ -1,14 +1,16 @@
+import java.io.FileReader;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.io.*;
-public class Main {
+class Main {
+	public static void main(String[] args) throws FileNotFoundException {
 
-public static void main(String[] args) {
-    //MENU
+		ArrayList<String> arrayList = new ArrayList<>();
+		FileReader fr = new FileReader("names.txt");
+		Scanner fileScanner = new Scanner(fr);
     Scanner input = new Scanner(System.in);
     boolean mainLoop = true;
-    File names = null;
-    FileReader fr = null;
-    BufferedReader br = null;
 
     int choice;
     while(true){
@@ -23,7 +25,6 @@ public static void main(String[] args) {
     switch(choice){
 
     case 1:
-        //Answers
         System.out.print("$98,345 average salary in South Florida!");
         break;
 
@@ -36,43 +37,7 @@ public static void main(String[] args) {
         break;
 
     case 4: 
-        /*Display current Students from names.txt
-        //String line;
-        //while((line = in.readLine()) != null)
-        //{
-        //  System.out.println(line);
-        //}
-        //  in.close();
-        //System.out.println("");
-        //break;
-        //"C:\Users\G\Downloads\names.txt"
-        //Scanner fileIn = new Scanner(new File("names.txt"));
-
-        //while (input.hasNextLine())*/
-          
-            System.out.println("Current Students:\n");
-            try {
-            names = new File ("C:\\names.txt");
-            fr = new FileReader (names);
-            br = new BufferedReader(fr);
-
-         
-           String linea;
-           while((linea=br.readLine())!=null)
-           System.out.println(linea);
-          }
-        catch(Exception e){
-           e.printStackTrace();
-        }finally{
-           try{                    
-              if( null != fr ){   
-                 fr.close();     
-              }                  
-           }catch (Exception e2){ 
-              e2.printStackTrace();
-           }
-        //    System.out.println(input.nextLine());
-            }
+      System.out.println("Current Students:\n");
         break;
 
     case 5:
@@ -86,5 +51,6 @@ public static void main(String[] args) {
 
     }
     }
-    }
-   }
+
+	}
+}
