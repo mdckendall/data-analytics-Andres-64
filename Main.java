@@ -37,7 +37,7 @@ class Main {
         break;
 
     case 4: 
-      System.out.println("Current Students:\n");
+      System.out.println("Current Students:");
         {
           try{
           FileInputStream fstream = new FileInputStream("names.txt");
