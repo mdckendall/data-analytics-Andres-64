@@ -38,6 +38,21 @@ class Main {
 
     case 4: 
       System.out.println("Current Students:\n");
+        {
+          try{
+          FileInputStream fstream = new FileInputStream("names.txt");
+          DataInputStream in = new DataInputStream(fstream);
+          BufferedReader br = new BufferedReader(new InputStreamReader(in));
+          String strLine;
+          while ((strLine = br.readLine()) != null)   {
+          System.out.println (strLine);
+          }
+          in.close();
+          }catch (Exception e){//Catch exception if any
+          System.err.println("Error: " + e.getMessage());
+          }
+          }
+        
         break;
 
     case 5:
