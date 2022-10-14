@@ -25,7 +25,7 @@ class Main {
     switch(choice){
 
     case 1:
-        System.out.print("$98,345 average salary in South Florida! \n");
+        System.out.println("$98,345 average salary in South Florida!");
         break;
 
     case 2:
